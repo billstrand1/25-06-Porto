@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Driving Directions</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <style>
+      #map {
+        height: 100vh;
+        width: 100%;
+      }
+    </style>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCZEhxLgPDSihiwg638QkOjjpbiRwTZlck&callback=initMap&libraries=places" async defer></script>
+    <script>
+      function initMap() {
+        const map = new google.maps.Map(document.getElementById("map"), {
+          zoom: 7,
+          center: { lat: 39.5, lng: -8.0 },
+        });
+
+        const directionsService = new google.maps.DirectionsService();
+        const directionsRenderer = new google.maps.DirectionsRenderer({ map: map });
+
+        const waypoints = [
+          { location: { lat: 41.6343, lng: -7.5758 }, stopover: true },
+          { location: { lat: 41.1875, lng: -7.5328 }, stopover: true },
+          { location: { lat: 41.1441, lng: -7.8125 }, stopover: true },
+          { location: { lat: 41.1483, lng: -8.6143 }, stopover: true },
+          { location: { lat: 40.2019, lng: -8.4338 }, stopover: true },
+          { location: { lat: 39.6058, lng: -8.4131 }, stopover: true },
+          { location: { lat: 39.3964, lng: -9.2734 }, stopover: true },
+          { location: { lat: 38.8014, lng: -9.3874 }, stopover: true },
+          { location: { lat: 38.6012, lng: -7.8885 }, stopover: true }
+        ];
+
+        directionsService.route(
+          {
+            origin: { lat: 41.1382, lng: -8.6210 }, // The Rebello
+            destination: { lat: 38.7049, lng: -9.1620 }, // Emerald House Lisbon
+            waypoints: waypoints,
+            travelMode: google.maps.TravelMode.DRIVING,
+          },
+          (response, status) => {
+            if (status === "OK") {
+              directionsRenderer.setDirections(response);
+            } else {
+              window.alert("Directions request failed due to " + status);
+            }
+          }
+        );
+      }
+    </script>
+  </head>
+  <body>
+    <div id="map"></div>
+  </body>
+</html>
