@@ -1,415 +1,69 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-    
-        <script>
-            L_NO_TOUCH = false;
-            L_DISABLE_3D = false;
-        </script>
-    
-    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
-    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
-    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.js"></script>
-    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.css"/>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
-    
-            <meta name="viewport" content="width=device-width,
-                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-            <style>
-                #map_286280e829c76274e710ab532dd22eb9 {
-                    position: relative;
-                    width: 100.0%;
-                    height: 100.0%;
-                    left: 0.0%;
-                    top: 0.0%;
-                }
-            </style>
-        
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portugal Trip Hub</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background: #2c3e50;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    nav {
+      background: #34495e;
+      display: flex;
+      justify-content: center;
+      padding: 10px;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      padding: 8px 12px;
+      background-color: #2980b9;
+      border-radius: 4px;
+      transition: background-color 0.3s ease;
+    }
+    nav a:hover {
+      background-color: #1abc9c;
+    }
+    main {
+      padding: 20px;
+      text-align: center;
+    }
+    iframe {
+      width: 90%;
+      height: 600px;
+      border: none;
+      margin-top: 20px;
+    }
+  </style>
 </head>
 <body>
-    
-    
-            <div class="folium-map" id="map_286280e829c76274e710ab532dd22eb9" ></div>
-        
+  <header>
+    <h1>Portugal Trip Hub</h1>
+    <p>Your interactive guide to hotels, attractions, and routes</p>
+  </header>
+
+  <nav>
+    <a href="index.html">Main Route Map</a>
+    <a href="https://www.tripadvisor.com/Attractions-g189100-Activities-Portugal.html" target="_blank">Top Attractions</a>
+    <a href="https://www.booking.com/country/pt.html" target="_blank">Hotels</a>
+    <a href="https://goo.gl/maps/EVfHSEWvZ6rN1Suu6" target="_blank">Google Map View</a>
+  </nav>
+
+  <main>
+    <h2>Interactive Route Map</h2>
+    <p>Below is your driving route through Portugal with hotel stops and drive times:</p>
+    <iframe src="index.html"></iframe>
+  </main>
 </body>
-<script>
-    
-    
-            var map_286280e829c76274e710ab532dd22eb9 = L.map(
-                "map_286280e829c76274e710ab532dd22eb9",
-                {
-                    center: [39.5, -8.0],
-                    crs: L.CRS.EPSG3857,
-                    zoom: 7,
-                    zoomControl: true,
-                    preferCanvas: false,
-                }
-            );
-
-            
-
-        
-    
-            var tile_layer_a0684cee3588e7b5a03211bfcf695610 = L.tileLayer(
-                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
-                {"attribution": "Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
-            ).addTo(map_286280e829c76274e710ab532dd22eb9);
-        
-    
-            var marker_4793c94456c1bcd108862021e673a867 = L.marker(
-                [41.1382, -8.621],
-                {}
-            ).addTo(map_286280e829c76274e710ab532dd22eb9);
-        
-    
-            var div_icon_8c52761eea700411cde6f96599ad0be5 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 12pt; color: white; background-color: blue; border-radius: 50%; text-align: center; width: 24px; height: 24px;\"\u003e1\u003c/div\u003e"});
-            marker_4793c94456c1bcd108862021e673a867.setIcon(div_icon_8c52761eea700411cde6f96599ad0be5);
-        
-    
-        var popup_2c51537ed097ca6303aced11bf078a2f = L.popup({"maxWidth": "100%"});
-
-        
-            var html_b6e0c23008c143c134b7890d833b0270 = $(`<div id="html_b6e0c23008c143c134b7890d833b0270" style="width: 100.0%; height: 100.0%;">1. The Rebello Hotel & Spa</div>`)[0];
-            popup_2c51537ed097ca6303aced11bf078a2f.setContent(html_b6e0c23008c143c134b7890d833b0270);
-        
-
-        marker_4793c94456c1bcd108862021e673a867.bindPopup(popup_2c51537ed097ca6303aced11bf078a2f)
-        ;
-
-        
-    
-    
-            marker_4793c94456c1bcd108862021e673a867.bindTooltip(
-                `<div>
-                     1. The Rebello Hotel & Spa
-                 </div>`,
-                {"sticky": true}
-            );
-        
-    
-            var marker_3e2bfca80c185e2864f3e68508db0a7c = L.marker(
-                [41.6343, -7.5758],
-                {}
-            ).addTo(map_286280e829c76274e710ab532dd22eb9);
-        
-    
-            var div_icon_c8ce3fc8b1b7ff5c1fa39db6aaa1f3c2 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 12pt; color: white; background-color: blue; border-radius: 50%; text-align: center; width: 24px; height: 24px;\"\u003e2\u003c/div\u003e"});
-            marker_3e2bfca80c185e2864f3e68508db0a7c.setIcon(div_icon_c8ce3fc8b1b7ff5c1fa39db6aaa1f3c2);
-        
-    
-        var popup_090650449675ea9c04684a928d5c7632 = L.popup({"maxWidth": "100%"});
-
-        
-            var html_8af5eb19c00db165b8b0b4412f29c1ec = $(`<div id="html_8af5eb19c00db165b8b0b4412f29c1ec" style="width: 100.0%; height: 100.0%;">2. Vidago Palace Hotel<br>Drive time from previous: 100 min</div>`)[0];
-            popup_090650449675ea9c04684a928d5c7632.setContent(html_8af5eb19c00db165b8b0b4412f29c1ec);
-        
-
-        marker_3e2bfca80c185e2864f3e68508db0a7c.bindPopup(popup_090650449675ea9c04684a928d5c7632)
-        ;
-
-        
-    
-    
-            marker_3e2bfca80c185e2864f3e68508db0a7c.bindTooltip(
-                `<div>
-                     2. Vidago Palace Hotel<br>Drive time from previous: 100 min
-                 </div>`,
-                {"sticky": true}
-            );
-        
-    
-            var marker_87c8cf2599324cc3524b268d3b462873 = L.marker(
-                [41.1875, -7.5328],
-                {}
-            ).addTo(map_286280e829c76274e710ab532dd22eb9);
-        
-    
-            var div_icon_82920f66022eba988468ed2f3a46dbbe = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 12pt; color: white; background-color: blue; border-radius: 50%; text-align: center; width: 24px; height: 24px;\"\u003e3\u003c/div\u003e"});
-            marker_87c8cf2599324cc3524b268d3b462873.setIcon(div_icon_82920f66022eba988468ed2f3a46dbbe);
-        
-    
-        var popup_d5cfa76e6f0437e38313324250af587e = L.popup({"maxWidth": "100%"});
-
-        
-            var html_18b331437deb116c9006b5bb00c8397c = $(`<div id="html_18b331437deb116c9006b5bb00c8397c" style="width: 100.0%; height: 100.0%;">3. The Vintage House Douro<br>Drive time from previous: 50 min</div>`)[0];
-            popup_d5cfa76e6f0437e38313324250af587e.setContent(html_18b331437deb116c9006b5bb00c8397c);
-        
-
-        marker_87c8cf2599324cc3524b268d3b462873.bindPopup(popup_d5cfa76e6f0437e38313324250af587e)
-        ;
-
-        
-    
-    
-            marker_87c8cf2599324cc3524b268d3b462873.bindTooltip(
-                `<div>
-                     3. The Vintage House Douro<br>Drive time from previous: 50 min
-                 </div>`,
-                {"sticky": true}
-            );
-        
-    
-            var marker_b299a568893922db296a43d03f76dcda = L.marker(
-                [41.1441, -7.8125],
-                {}
-            ).addTo(map_286280e829c76274e710ab532dd22eb9);
-        
-    
-            var div_icon_edeb0db5e818074b2b245d1a15bf02c6 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 12pt; color: white; background-color: blue; border-radius: 50%; text-align: center; width: 24px; height: 24px;\"\u003e4\u003c/div\u003e"});
-            marker_b299a568893922db296a43d03f76dcda.setIcon(div_icon_edeb0db5e818074b2b245d1a15bf02c6);
-        
-    
-        var popup_ecf43d868c286343bb7a9b83d948e656 = L.popup({"maxWidth": "100%"});
-
-        
-            var html_edb694643fdded7ade8b60d59500b3ac = $(`<div id="html_edb694643fdded7ade8b60d59500b3ac" style="width: 100.0%; height: 100.0%;">4. Six Senses Douro Valley<br>Drive time from previous: 30 min</div>`)[0];
-            popup_ecf43d868c286343bb7a9b83d948e656.setContent(html_edb694643fdded7ade8b60d59500b3ac);
-        
-
-        marker_b299a568893922db296a43d03f76dcda.bindPopup(popup_ecf43d868c286343bb7a9b83d948e656)
-        ;
-
-        
-    
-    
-            marker_b299a568893922db296a43d03f76dcda.bindTooltip(
-                `<div>
-                     4. Six Senses Douro Valley<br>Drive time from previous: 30 min
-                 </div>`,
-                {"sticky": true}
-            );
-        
-    
-            var marker_112625e78b2ffc1533f82db16459d1b6 = L.marker(
-                [41.1483, -8.6143],
-                {}
-            ).addTo(map_286280e829c76274e710ab532dd22eb9);
-        
-    
-            var div_icon_3b81aa6fcf9f55577b4bad798ba739b2 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 12pt; color: white; background-color: blue; border-radius: 50%; text-align: center; width: 24px; height: 24px;\"\u003e5\u003c/div\u003e"});
-            marker_112625e78b2ffc1533f82db16459d1b6.setIcon(div_icon_3b81aa6fcf9f55577b4bad798ba739b2);
-        
-    
-        var popup_1294df27cfc9592043e16ae7ed75c253 = L.popup({"maxWidth": "100%"});
-
-        
-            var html_105df8e947fc646b44a382c5db576cb8 = $(`<div id="html_105df8e947fc646b44a382c5db576cb8" style="width: 100.0%; height: 100.0%;">5. Wine & Books Porto Hotel<br>Drive time from previous: 90 min</div>`)[0];
-            popup_1294df27cfc9592043e16ae7ed75c253.setContent(html_105df8e947fc646b44a382c5db576cb8);
-        
-
-        marker_112625e78b2ffc1533f82db16459d1b6.bindPopup(popup_1294df27cfc9592043e16ae7ed75c253)
-        ;
-
-        
-    
-    
-            marker_112625e78b2ffc1533f82db16459d1b6.bindTooltip(
-                `<div>
-                     5. Wine & Books Porto Hotel<br>Drive time from previous: 90 min
-                 </div>`,
-                {"sticky": true}
-            );
-        
-    
-            var marker_e2d72b347116c97af30d820621ad08ef = L.marker(
-                [40.2019, -8.4338],
-                {}
-            ).addTo(map_286280e829c76274e710ab532dd22eb9);
-        
-    
-            var div_icon_2520ce1d2769132dc29861033f84c441 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 12pt; color: white; background-color: blue; border-radius: 50%; text-align: center; width: 24px; height: 24px;\"\u003e6\u003c/div\u003e"});
-            marker_e2d72b347116c97af30d820621ad08ef.setIcon(div_icon_2520ce1d2769132dc29861033f84c441);
-        
-    
-        var popup_d5c4b6c9dd73e757edc188254c193250 = L.popup({"maxWidth": "100%"});
-
-        
-            var html_b930c29009b03f2add681ad7e7f9735e = $(`<div id="html_b930c29009b03f2add681ad7e7f9735e" style="width: 100.0%; height: 100.0%;">6. Quinta Das Lagrimas<br>Drive time from previous: 90 min</div>`)[0];
-            popup_d5c4b6c9dd73e757edc188254c193250.setContent(html_b930c29009b03f2add681ad7e7f9735e);
-        
-
-        marker_e2d72b347116c97af30d820621ad08ef.bindPopup(popup_d5c4b6c9dd73e757edc188254c193250)
-        ;
-
-        
-    
-    
-            marker_e2d72b347116c97af30d820621ad08ef.bindTooltip(
-                `<div>
-                     6. Quinta Das Lagrimas<br>Drive time from previous: 90 min
-                 </div>`,
-                {"sticky": true}
-            );
-        
-    
-            var marker_15e92563b1b492e1e05f18bb89f01aa6 = L.marker(
-                [39.6058, -8.4131],
-                {}
-            ).addTo(map_286280e829c76274e710ab532dd22eb9);
-        
-    
-            var div_icon_7a48851658541424b6850bea9defa9c6 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 12pt; color: white; background-color: blue; border-radius: 50%; text-align: center; width: 24px; height: 24px;\"\u003e7\u003c/div\u003e"});
-            marker_15e92563b1b492e1e05f18bb89f01aa6.setIcon(div_icon_7a48851658541424b6850bea9defa9c6);
-        
-    
-        var popup_fe8d671cbe2a2dfa3457a626061f2a74 = L.popup({"maxWidth": "100%"});
-
-        
-            var html_04c4efd1c536f2ab80a61fded08e5950 = $(`<div id="html_04c4efd1c536f2ab80a61fded08e5950" style="width: 100.0%; height: 100.0%;">7. Estalagem de Santa Iria Hotel & Spa<br>Drive time from previous: 45 min</div>`)[0];
-            popup_fe8d671cbe2a2dfa3457a626061f2a74.setContent(html_04c4efd1c536f2ab80a61fded08e5950);
-        
-
-        marker_15e92563b1b492e1e05f18bb89f01aa6.bindPopup(popup_fe8d671cbe2a2dfa3457a626061f2a74)
-        ;
-
-        
-    
-    
-            marker_15e92563b1b492e1e05f18bb89f01aa6.bindTooltip(
-                `<div>
-                     7. Estalagem de Santa Iria Hotel & Spa<br>Drive time from previous: 45 min
-                 </div>`,
-                {"sticky": true}
-            );
-        
-    
-            var marker_e18db252ac1947ac12e28fa342011b46 = L.marker(
-                [39.3964, -9.2734],
-                {}
-            ).addTo(map_286280e829c76274e710ab532dd22eb9);
-        
-    
-            var div_icon_706061bdc7899f38cc4650e378c0f24e = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 12pt; color: white; background-color: blue; border-radius: 50%; text-align: center; width: 24px; height: 24px;\"\u003e8\u003c/div\u003e"});
-            marker_e18db252ac1947ac12e28fa342011b46.setIcon(div_icon_706061bdc7899f38cc4650e378c0f24e);
-        
-    
-        var popup_47f08442730e47c04fff5cce06841c4e = L.popup({"maxWidth": "100%"});
-
-        
-            var html_268f4d13ad082c8612f5ab638beda8be = $(`<div id="html_268f4d13ad082c8612f5ab638beda8be" style="width: 100.0%; height: 100.0%;">8. Praia D'El Rey Marriott<br>Drive time from previous: 75 min</div>`)[0];
-            popup_47f08442730e47c04fff5cce06841c4e.setContent(html_268f4d13ad082c8612f5ab638beda8be);
-        
-
-        marker_e18db252ac1947ac12e28fa342011b46.bindPopup(popup_47f08442730e47c04fff5cce06841c4e)
-        ;
-
-        
-    
-    
-            marker_e18db252ac1947ac12e28fa342011b46.bindTooltip(
-                `<div>
-                     8. Praia D'El Rey Marriott<br>Drive time from previous: 75 min
-                 </div>`,
-                {"sticky": true}
-            );
-        
-    
-            var marker_62e9e30988d06f5ca8e510da3984c11a = L.marker(
-                [38.8014, -9.3874],
-                {}
-            ).addTo(map_286280e829c76274e710ab532dd22eb9);
-        
-    
-            var div_icon_2856a6b23509204554babd54d246a7d5 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 12pt; color: white; background-color: blue; border-radius: 50%; text-align: center; width: 24px; height: 24px;\"\u003e9\u003c/div\u003e"});
-            marker_62e9e30988d06f5ca8e510da3984c11a.setIcon(div_icon_2856a6b23509204554babd54d246a7d5);
-        
-    
-        var popup_35b86664554c1ef24ee783b6b48b2fa5 = L.popup({"maxWidth": "100%"});
-
-        
-            var html_827bb6f0f7be18503ec17a1a3c1b8c80 = $(`<div id="html_827bb6f0f7be18503ec17a1a3c1b8c80" style="width: 100.0%; height: 100.0%;">9. Sintra Marmòris Palace<br>Drive time from previous: 45 min</div>`)[0];
-            popup_35b86664554c1ef24ee783b6b48b2fa5.setContent(html_827bb6f0f7be18503ec17a1a3c1b8c80);
-        
-
-        marker_62e9e30988d06f5ca8e510da3984c11a.bindPopup(popup_35b86664554c1ef24ee783b6b48b2fa5)
-        ;
-
-        
-    
-    
-            marker_62e9e30988d06f5ca8e510da3984c11a.bindTooltip(
-                `<div>
-                     9. Sintra Marmòris Palace<br>Drive time from previous: 45 min
-                 </div>`,
-                {"sticky": true}
-            );
-        
-    
-            var marker_09ee001234e79199add002bbf2b37fad = L.marker(
-                [38.6012, -7.8885],
-                {}
-            ).addTo(map_286280e829c76274e710ab532dd22eb9);
-        
-    
-            var div_icon_5876018c67e1252ba0dce8ef1df19677 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 12pt; color: white; background-color: blue; border-radius: 50%; text-align: center; width: 24px; height: 24px;\"\u003e10\u003c/div\u003e"});
-            marker_09ee001234e79199add002bbf2b37fad.setIcon(div_icon_5876018c67e1252ba0dce8ef1df19677);
-        
-    
-        var popup_f5df88ed093a2661b8314fa20830106b = L.popup({"maxWidth": "100%"});
-
-        
-            var html_94f46a60f1cbf8b5c16c7815d2ae9fd8 = $(`<div id="html_94f46a60f1cbf8b5c16c7815d2ae9fd8" style="width: 100.0%; height: 100.0%;">10. Convento do Espinheiro<br>Drive time from previous: 150 min</div>`)[0];
-            popup_f5df88ed093a2661b8314fa20830106b.setContent(html_94f46a60f1cbf8b5c16c7815d2ae9fd8);
-        
-
-        marker_09ee001234e79199add002bbf2b37fad.bindPopup(popup_f5df88ed093a2661b8314fa20830106b)
-        ;
-
-        
-    
-    
-            marker_09ee001234e79199add002bbf2b37fad.bindTooltip(
-                `<div>
-                     10. Convento do Espinheiro<br>Drive time from previous: 150 min
-                 </div>`,
-                {"sticky": true}
-            );
-        
-    
-            var marker_72bd97c326b0db0c6e91e9bbeb2fcb46 = L.marker(
-                [38.7049, -9.162],
-                {}
-            ).addTo(map_286280e829c76274e710ab532dd22eb9);
-        
-    
-            var div_icon_85b5f72e6c2501fd25af06f387b88432 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 12pt; color: white; background-color: blue; border-radius: 50%; text-align: center; width: 24px; height: 24px;\"\u003e11\u003c/div\u003e"});
-            marker_72bd97c326b0db0c6e91e9bbeb2fcb46.setIcon(div_icon_85b5f72e6c2501fd25af06f387b88432);
-        
-    
-        var popup_ddb55f7c9aa991e16165a378059badab = L.popup({"maxWidth": "100%"});
-
-        
-            var html_6759a41fd1d6de502aff541da4b2a199 = $(`<div id="html_6759a41fd1d6de502aff541da4b2a199" style="width: 100.0%; height: 100.0%;">11. Emerald House Lisbon<br>Drive time from previous: 90 min</div>`)[0];
-            popup_ddb55f7c9aa991e16165a378059badab.setContent(html_6759a41fd1d6de502aff541da4b2a199);
-        
-
-        marker_72bd97c326b0db0c6e91e9bbeb2fcb46.bindPopup(popup_ddb55f7c9aa991e16165a378059badab)
-        ;
-
-        
-    
-    
-            marker_72bd97c326b0db0c6e91e9bbeb2fcb46.bindTooltip(
-                `<div>
-                     11. Emerald House Lisbon<br>Drive time from previous: 90 min
-                 </div>`,
-                {"sticky": true}
-            );
-        
-    
-            var poly_line_acdce3f17902d479d8f6ed2a0e7e5255 = L.polyline(
-                [[41.1382, -8.621], [41.6343, -7.5758], [41.1875, -7.5328], [41.1441, -7.8125], [41.1483, -8.6143], [40.2019, -8.4338], [39.6058, -8.4131], [39.3964, -9.2734], [38.8014, -9.3874], [38.6012, -7.8885], [38.7049, -9.162]],
-                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 4}
-            ).addTo(map_286280e829c76274e710ab532dd22eb9);
-        
-</script>
 </html>
