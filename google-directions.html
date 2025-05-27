@@ -63,7 +63,8 @@
 
     <!-- Replace YOUR_API_KEY below with your actual restricted Google Maps API key -->
     <script async
-      src="https://maps.googleapis.com/maps/api/js?key=GM_API&callback=initMap">
+      src="https://maps.googleapis.com/maps/api/js?key=${process.env.GM_API}&callback=initMap">
+      // src="https://maps.googleapis.com/maps/api/js?key=GM_API&callback=initMap">
     </script>
   </body>
 </html>
